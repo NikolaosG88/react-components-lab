@@ -1,13 +1,13 @@
 import React from "react"
 import  "./WeatherForecast.css"
+import WeatherIcon from "../WeatherIcon/WeatherIcon"
+import WeatherData from "../WeatherData/WeatherData"
 
-export default function WeatherForecast(props) {
+export default function WeatherForecast({ imageName, altPoint, dayName, currentCondi, currentTime }) {
   return (
-<div className="weather">
-  <h2>{props.dayName}</h2>
-  <img src={props.imageName} alt={props.altPoint} />
-  <p><span>conditions: </span>{props.currentCondi}</p>
-  <p><span>Time: </span>{props.currentTime}</p>
-</div>
+    <div className="weather">
+      <WeatherIcon img={imageName} alt={altPoint} />
+      <WeatherData day={dayName} conditions={currentCondi} time={currentTime} />
+    </div>
   );
 }

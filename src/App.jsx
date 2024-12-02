@@ -1,6 +1,6 @@
 
 import React from "react";
-import WeatherForecast from "./Components/WeatherForecast/WeatherForecast";"./Components/WeatherForecast/WeatherForecast.jsx"
+import WeatherForecast from "./Components/WeatherForecast/WeatherForecast";
 
 
 const weatherForecasts = [
@@ -48,15 +48,14 @@ const App = () => {
   <h1>Local Weather</h1>
   <section>
     {
-      weatherForecasts.map((x) => <WeatherForecast
+      weatherForecasts.map((x, index) => <WeatherForecast
+      key={index}
       imageName={x.img}
       dayName={x.day}
       altPoint={x.imgAlt}
       currentCondi={x.conditions}
       currentTime={x.time}
-
       />)
-    
     }
   </section>
   </>
